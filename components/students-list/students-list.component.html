@@ -1,0 +1,30 @@
+<p>students-list works!</p>
+<table>
+    <tr>
+        <th>name</th>
+        <th>age</th>
+        <th>email</th>
+        <th>actions</th>
+    </tr>
+        <tr *ngFor="let item of students">
+            <td>{{item.name}}</td>
+            <td>{{item.age}}</td>
+            <td>{{item.email}}</td>
+            <td>
+                <button>edit</button>
+                <button>delete</button>
+            </td>
+        </tr>
+</table>
+
+
+<form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+<label for="name">enter name</label>
+<input formControlName="name" id="name" type="text">
+<label for="age" >enter age</label>
+<input formControlName="age" id="age" type="number">
+<label for="email">enter email</label>
+<input formControlName="email" id="email" type="email">
+<button type="submit" >add</button>
+</form>
+
